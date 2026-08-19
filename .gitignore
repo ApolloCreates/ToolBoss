@@ -37,3 +37,7 @@ temp_audio.wav
 
 # Logs
 *.log
+
+# ChromaDB local database
+modules/lexa_db/*.sqlite3
+modules/lexa_db/
