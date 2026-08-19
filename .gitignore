@@ -41,3 +41,7 @@ temp_audio.wav
 # ChromaDB local database
 modules/lexa_db/*.sqlite3
 modules/lexa_db/
+
+# Generated Chroma databases
+lexa_db/
+modules/lexa_db/

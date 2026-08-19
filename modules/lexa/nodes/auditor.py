@@ -1,20 +1,19 @@
 import os
-from langchain_community.vectorstores import Chroma
-from langchain_huggingface import HuggingFaceEmbeddings
+
 from langchain_groq import ChatGroq
 from dotenv import load_dotenv
+
+from .librarian import get_vector_db
 
 load_dotenv()
 
 # 1. Setup Paths (Same logic as Librarian)
-current_dir = os.path.dirname(os.path.abspath(__file__))
-db_path = os.path.normpath(os.path.join(current_dir, "..", "..", "lexa_db"))
+
 
 def audit_claim(case_details):
     print(f"--- ⚖️ AUDITOR: ANALYZING COMPLIANCE ---")
 
-    embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
-    vector_db = Chroma(persist_directory=db_path, embedding_function=embeddings)
+    vector_db = get_vector_db()
 
     # 1. Search for rules
     query = f"Policy limits and exclusions for {case_details.incident_type} of {case_details.item_name}"
