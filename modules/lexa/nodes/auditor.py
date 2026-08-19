@@ -30,7 +30,7 @@ def audit_claim(case_details):
         sources.append(f"Page {page}: {doc.page_content[:100]}...")
 
     # 3. Reasoning Phase
-    llm = ChatGroq(model="openai/gpt-oss-safeguard-20b", temperature=0)
+    llm = ChatGroq(model="openai/gpt-oss-120b", temperature=0)
     prompt = f"Using this policy text: {context}\n\nAnalyze this claim: {case_details}. Provide a verdict and cite specific rules."
     
     response = llm.invoke(prompt)

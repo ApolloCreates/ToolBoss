@@ -25,17 +25,17 @@ page = st.sidebar.radio(
 # ---------------- ROUTING ---------------- #
 
 if page == "Dashboard":
-    from pages.dashboard import show_dashboard
+    from app_pages.dashboard import show_dashboard
     show_dashboard()
 
 elif page == "LEXA AI":
-    from pages.lexa_page import show_lexa
+    from app_pages.lexa_page import show_lexa
     show_lexa()
 
 elif page == "Meeting Summarizer":
-    from pages.summarizer_page import show_summarizer
+    from app_pages.summarizer_page import show_summarizer
     show_summarizer()
 
 elif page == "About":
-    from pages.about import show_about
+    from app_pages.about import show_about
     show_about()

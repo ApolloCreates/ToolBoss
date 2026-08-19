@@ -19,7 +19,7 @@ class ClaimDetails(BaseModel):
 
 def extract_claim_data(user_input: str):
     # 2026 Gold Standard for Tool Use on Groq
-    llm = ChatGroq(model="llama-3.3-70b-versatile", temperature=0)
+    llm = ChatGroq(model="openai/gpt-oss-120b", temperature=0)
     structured_llm = llm.with_structured_output(ClaimDetails)
     
     messages = [
